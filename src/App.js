@@ -8,18 +8,18 @@ import Home from "./pages/home";
 function App() {
   return (
     <div>
-    <Header />
+      <Header />
 
-  <HashRouter><Routes>
-    <Route index element={<Home />} />
-    <Route path="Login" element={<Login />} />
-    </Routes>
+      <HashRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="Login" element={<Login />} />
+        </Routes>
+      </HashRouter>
 
-    </HashRouter>
+      <Footer />
     </div>
-    
   );
 }
-
 
 export default App;
