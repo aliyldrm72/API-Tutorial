@@ -1,14 +1,62 @@
+import { useState } from "react";
+import useApi from "../hooks/useApi";
 
- 
- 
- function Login (){
-    return(
-        <div>
-            Burası login sayfası
-            
-        </div>
-    )
- }
+function Login() {
+  const api =useApi()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  const btnLoginCheck = () => {
+   // alert(email + " " + password);
+   const postData ={email,password}
+   //console.log(">> DATAA", postData)
+   api.post('https://api.adoptez1artisan.com/auth/login',postData)
+  };
 
- export default Login
+  return (
+    <div className="row justify-content-center align-items-center my-3 py-3">
+      <div className="col-lg-4 col-md-6 col-sm-12">
+        <form>
+          <h4>Plese Login From Here</h4>
+          <br />
+
+          <div className="form-outline ">
+            <input
+              type="email"
+              id="form1Example13"
+              className="form-control form-control-lg"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <label className="form-label" >
+              Email address
+            </label>
+          </div>
+
+          <div className="form-outline ">
+            <input
+              type="password"
+              id="form1Example23"
+              className="form-control form-control-lg"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <label className="form-label" >
+              Password
+            </label>
+          </div>
+
+          <div className="d-flex justify-content-around align-items-center "></div>
+
+          <button
+            type="submit"
+            className="btn btn-primary  btn-lg btn-block"
+            onClick={btnLoginCheck}
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Login;

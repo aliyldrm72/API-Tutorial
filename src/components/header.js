@@ -3,8 +3,9 @@
 function Header (){
     return(
         <header>
-          <div className="container">
-        <div className=" d-flex justify-content-start align-items-start">
+          <div  className="container">
+          <div className="justify-content-center align-items-center">
+        <div className=" d-flex  pb-3  border-bottom">
           <h5 className=" me-auto"> Servis Finding Project</h5>
 
           <nav className="">
@@ -19,10 +20,11 @@ function Header (){
             </a>
            
           </nav>
-          <a className=" btn btn-outline-primary " href="#">
-            Sign up
-          </a>
+          
         </div>
+        </div>
+
+        
         </div>
       </header>
 

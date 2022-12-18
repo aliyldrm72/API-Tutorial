@@ -1,8 +1,9 @@
 function Footer (){
     return (
-        <footer className="pt-4 my-md-5 pt-md-5 border-top ">
+        <footer >
+          <div  className="container">
         <div className="row">
-          <div className="col-12 col-md">
+          <div className="col col-md">
             <img
               className="mb-2"
               src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
@@ -12,7 +13,7 @@ function Footer (){
             />
            
           </div>
-          <div className="col-4 col-md">
+          <div className="col-3 col-md">
             <h5>Features</h5>
             <ul className="list-unstyled text-small">
               <li>
@@ -47,7 +48,7 @@ function Footer (){
               </li>
             </ul>
           </div>
-          <div className="col-4 col-md">
+          <div className="col-3 col-md">
             <h5>Resources</h5>
             <ul className="list-unstyled text-small">
               <li>
@@ -72,7 +73,7 @@ function Footer (){
               </li>
             </ul>
           </div>
-          <div className="col-4 col-md">
+          <div className="col-3 col-md">
             <h5>About</h5>
             <ul className="list-unstyled text-small">
               <li>
@@ -97,6 +98,7 @@ function Footer (){
               </li>
             </ul>
           </div>
+        </div>
         </div>
       </footer>
 
