@@ -1,7 +1,13 @@
 import { useState } from "react";
 import useApi from "../hooks/useApi";
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
-function Login() {
+function Login(props) {
+console.log("<<<LOGİN PROPS",props)
+
+const dispatch =useDispatch()
+
   const api =useApi()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,8 +16,20 @@ function Login() {
    // alert(email + " " + password);
    const postData ={email,password}
    //console.log(">> DATAA", postData)
-   api.post('https://api.adoptez1artisan.com/auth/login',postData)
-  };
+   api.post('auth/login',postData)
+   .then((response)=>{
+    props.dispatch({
+      type: 'set_token',
+      payload:{
+        token: response.data.data.token} 
+
+    })
+
+   }
+   ).catch(err=>{
+    console.log(err)
+   })
+  }
 
   return (
     <div className="row justify-content-center align-items-center my-3 py-3">
@@ -59,4 +77,11 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStateToProps =(state) =>{
+  return{
+      ...state
+  }
+}
+
+export default connect(mapStateToProps)(Login)
+

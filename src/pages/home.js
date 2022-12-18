@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     api
       .get(
-        "https://api.adoptez1artisan.com/public/categories/listMainCategories"
+        "public/categories/listMainCategories"
       )
       .then((response) => {
         const tempCategoriesBoxes = [];

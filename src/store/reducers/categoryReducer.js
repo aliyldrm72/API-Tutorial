@@ -1,16 +1,16 @@
 const initialState ={
-    token: localStorage.getItem('token'),
+    
 }
 
-const authReducer =(state=initialState,action )=>{
+const categoryReducer =(state=initialState,action )=>{
     switch(action.type){
-        case "set_token":
+        case "set_app_data":
 
-        localStorage.setItem('token',action.payload.token)
+        
 
             return{
                 ...state,
-                token:action.payload.token,
+                user:action.payload.user,
             }
         case "remove_token":
             return{
@@ -24,4 +24,4 @@ const authReducer =(state=initialState,action )=>{
 
 }
  
-export default authReducer
+export default categoryReducer
